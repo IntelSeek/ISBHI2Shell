@@ -14,7 +14,7 @@ func main() {
 
 	scanner := bufio.NewScanner(os.Stdin)
 
-	fmt.Println("ISBHI", config.Version+"\nType 'help' to list commands.")
+	fmt.Println("ISBHI2Shell", config.Version+"\nType 'help' to list commands.")
 
 	for {
 		fmt.Print("\n╭──[ " + config.Username + "@ISBHI ]-(" + commands.PromptWD() + ")\n╰─$ ")
