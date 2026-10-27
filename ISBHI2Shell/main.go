@@ -14,7 +14,7 @@ func main() {
 
 	scanner := bufio.NewScanner(os.Stdin)
 
-	fmt.Println("\nISBHI", config.Version+"\nType 'help' to list commands.")
+	fmt.Println("ISBHI", config.Version+"\nType 'help' to list commands.")
 
 	for {
 		fmt.Print("\n╭──[ " + config.Username + "@ISBHI ]-(" + commands.PromptWD() + ")\n╰─$ ")
@@ -40,7 +40,7 @@ func main() {
 			commands.Help(args)
 
 		case "version":
-			fmt.Println("\n", config.Name, config.Version)
+			fmt.Println("\n"+config.Name, config.Version)
 
 		case "about":
 			fmt.Println("\n" + config.Name + " " + config.Version +
