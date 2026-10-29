@@ -1,3 +1,12 @@
+/*
+ * ISBHI2Shell
+ *
+ * Copyright (c) 2026 ISBHI
+ *
+ * File: main.go
+ * Description: Main entry point of ISBHI2Shell.
+ */
+
 package main
 
 import (

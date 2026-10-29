@@ -1,3 +1,12 @@
+/*
+ * ISBHI2Shell
+ *
+ * Copyright (c) 2026 ISBHI
+ *
+ * File: system.go
+ * Description: Implements system-related commands.
+ */
+
 package commands
 
 import (

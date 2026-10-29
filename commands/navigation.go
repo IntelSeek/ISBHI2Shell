@@ -1,3 +1,12 @@
+/*
+ * ISBHI2Shell
+ *
+ * Copyright (c) 2026 ISBHI
+ *
+ * File: navigation.go
+ * Description: Implements navigation commands.
+ */
+
 package commands
 
 import (

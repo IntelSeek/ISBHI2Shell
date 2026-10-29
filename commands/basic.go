@@ -1,3 +1,12 @@
+/*
+ * ISBHI2Shell
+ *
+ * Copyright (c) 2026 ISBHI
+ *
+ * File: basic.go
+ * Description: Implements basic commands such as help and whoami.
+ */
+
 package commands
 
 import "fmt"

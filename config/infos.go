@@ -1,3 +1,12 @@
+/*
+ * ISBHI2Shell
+ *
+ * Copyright (c) 2026 ISBHI
+ *
+ * File: infos.go
+ * Description: Defines internal project information and metadata.
+ */
+
 package config
 
 import (
