@@ -9,7 +9,11 @@
 
 package commands
 
-import "fmt"
+import (
+	"fmt"
+	"isbhi2shell/config"
+	"os"
+)
 
 func Help(args []string) {
 	if len(args) == 0 {
@@ -22,6 +26,7 @@ pwd     - shows current working directory
 cd      - changes current working directory
 ls      - lists files and directories
 sysinfo - shows info about system and ISBHI2Shell
+cat     - reads and displays the contents of one or more files
 clear   - clears terminal
 exit    - exits ISBHI2Shell`)
 		return
@@ -78,6 +83,14 @@ Examples:
 sysinfo - shows info about system and ISBHI2Shell
 Usage: sysinfo`)
 
+		case "cat":
+			fmt.Println(`
+cat - reads and displays the contents of one or more files
+Usage: cat <file ...>
+Examples:
+  cat file.txt
+  cat file.txt file2.txt`)
+
 		case "clear":
 			fmt.Println(`
 clear - clears terminal
@@ -94,10 +107,27 @@ Usage: exit`)
 	}
 }
 
-func Whoami(username string) {
-	fmt.Println("\n" + username)
+func Whoami() {
+	fmt.Println("\n" + config.Username())
 }
 
 func Clear() {
 	fmt.Print("\033[H\033[2J\033[3J")
+}
+
+func Cat(args []string) {
+	if len(args) == 0 {
+		fmt.Println("\nNot enough args for cat.")
+	}
+
+	for _, file := range args {
+		content, err := os.ReadFile(file)
+
+		if err != nil {
+			fmt.Println("\n" + err.Error())
+			continue
+		}
+
+		fmt.Println("\n" + string(content))
+	}
 }

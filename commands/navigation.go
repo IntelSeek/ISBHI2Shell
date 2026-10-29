@@ -20,7 +20,7 @@ import (
 func Ls(path string) {
 	entries, err := os.ReadDir(path)
 	if err != nil {
-		fmt.Println("\nCan't list directory:", err)
+		fmt.Println("\n" + err.Error())
 		return
 	}
 
@@ -50,7 +50,7 @@ func PromptWD() string {
 	rel, err := filepath.Rel(config.UserHomeDir(), Pwd())
 
 	if err != nil {
-		fmt.Println("\nCan't get relation:", err)
+		fmt.Println("\n" + err.Error())
 		return ""
 	}
 
@@ -61,7 +61,7 @@ func Pwd() string {
 	dir, err := os.Getwd()
 
 	if err != nil {
-		fmt.Println("\nCan't get current directory:", err)
+		fmt.Println("\n" + err.Error())
 		return ""
 	}
 

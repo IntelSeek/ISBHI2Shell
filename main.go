@@ -30,7 +30,7 @@ func main() {
 
 		if !scanner.Scan() {
 			if err := scanner.Err(); err != nil {
-				fmt.Println("\nInput error:", err)
+				fmt.Println("\n" + err.Error())
 			}
 			return
 		}
@@ -57,7 +57,7 @@ func main() {
 				"\n" + config.Reference)
 
 		case "whoami":
-			commands.Whoami(config.Username())
+			commands.Whoami()
 
 		case "pwd":
 			fmt.Println("\n" + commands.Pwd())
@@ -82,6 +82,9 @@ func main() {
 
 		case "sysinfo":
 			commands.SysInfo()
+
+		case "cat":
+			commands.Cat(args)
 
 		case "clear":
 			commands.Clear()

@@ -17,7 +17,7 @@ import (
 	"strings"
 )
 
-const Version = "v0.2.0"
+const Version = "v0.3.0"
 
 func OS() string {
 	return runtime.GOOS
@@ -35,7 +35,7 @@ func Username() string {
 	currentUser, err := user.Current()
 
 	if err != nil {
-		fmt.Println("\nCan't get username:", err)
+		fmt.Println("\n" + err.Error())
 		return ""
 	}
 
@@ -54,7 +54,7 @@ func HostName() string {
 	hostname, err := os.Hostname()
 
 	if err != nil {
-		fmt.Println("\nCan't get hostname:", err)
+		fmt.Println("\n" + err.Error())
 		return ""
 	}
 
