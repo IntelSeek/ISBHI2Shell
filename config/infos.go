@@ -52,7 +52,7 @@ func HostName() string {
 	return hostname
 }
 
-var Reference = Username() + " - ISBHI"
+var Reference = Username() + " - " + HostName()
 
 func UserHomeDir() string {
 	dir, err := os.UserHomeDir()
