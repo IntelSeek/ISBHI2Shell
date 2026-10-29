@@ -12,6 +12,7 @@ whoami  - outputs current user
 pwd     - shows current working directory
 cd      - changes current working directory
 ls      - lists files and directories
+sysinfo - shows info about system and ISBHI2Shell
 clear   - clears terminal
 exit    - exits ISBHI2Shell`)
 		return
@@ -62,6 +63,11 @@ Examples:
   ls
   ls ..
   ls Documents`)
+
+		case "sysinfo":
+			fmt.Println(`
+sysinfo - shows info about system and ISBHI2Shell
+Usage: sysinfo`)
 
 		case "clear":
 			fmt.Println(`

@@ -17,7 +17,7 @@ func main() {
 	fmt.Println("ISBHI2Shell", config.Version+"\nType 'help' to list commands.")
 
 	for {
-		fmt.Print("\n╭──[ " + config.Username + "@ISBHI ]-(" + commands.PromptWD() + ")\n╰─$ ")
+		fmt.Print("\n╭──[ " + config.Username() + "@" + config.HostName() + " ]-(" + commands.PromptWD() + ")\n╰─$ ")
 
 		if !scanner.Scan() {
 			if err := scanner.Err(); err != nil {
@@ -48,7 +48,7 @@ func main() {
 				"\n" + config.Reference)
 
 		case "whoami":
-			commands.Whoami(config.Username)
+			commands.Whoami(config.Username())
 
 		case "pwd":
 			fmt.Println("\n" + commands.Pwd())
@@ -70,6 +70,9 @@ func main() {
 			} else {
 				fmt.Println("\nToo many arguments for ls.")
 			}
+
+		case "sysinfo":
+			commands.SysInfo()
 
 		case "clear":
 			commands.Clear()

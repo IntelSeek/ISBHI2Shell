@@ -8,9 +8,21 @@ import (
 	"strings"
 )
 
-const Version = "v0.1.0"
+const Version = "v0.1.1"
 
-var Username = func() string {
+func OS() string {
+	return runtime.GOOS
+}
+
+func CPUs() int {
+	return runtime.NumCPU()
+}
+
+func Arch() string {
+	return runtime.GOARCH
+}
+
+func Username() string {
 	currentUser, err := user.Current()
 
 	if err != nil {
@@ -27,9 +39,20 @@ var Username = func() string {
 	}
 
 	return username
-}()
+}
 
-var Reference = Username + " - ISBHI"
+func HostName() string {
+	hostname, err := os.Hostname()
+
+	if err != nil {
+		fmt.Println("\nCan't get hostname:", err)
+		return ""
+	}
+
+	return hostname
+}
+
+var Reference = Username() + " - ISBHI"
 
 func UserHomeDir() string {
 	dir, err := os.UserHomeDir()
